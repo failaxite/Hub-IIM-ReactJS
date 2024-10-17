@@ -42,8 +42,8 @@ function NavBar() {
 
       {token && (
         <>
-          <Link to="/profil"><FaUser /> Profil</Link>
           <Link to="/casiers-connectes"><FaBox /> Casiers Connectés</Link>
+          <Link to="/profil"><FaUser /> Profil</Link>
           <button onClick={handleLogout} className="logout-btn">
             <FaSignOutAlt /> Déconnexion
           </button>

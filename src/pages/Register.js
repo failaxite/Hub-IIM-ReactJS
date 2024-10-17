@@ -78,15 +78,6 @@ function Register() {
                         required
                     />
                 </div>
-                <div className="form-group">
-                    <label>Nom d'utilisateur</label>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
-                </div>
                 {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
                 <button type="submit">S'inscrire</button>
             </form>

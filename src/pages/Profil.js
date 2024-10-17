@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Profil() {
   const [userData, setUserData] = useState(null); // État pour stocker les données de l'utilisateur
   const [error, setError] = useState(null); // État pour gérer les erreurs
-  const [newUsername, setNewUsername] = useState(''); // Initialiser avec une chaîne vide
+  const [newUsername, setNewUsername] = useState(''); // Initialiser avec une chaîne vide pour le nom d'utilisateur
   const [isUpdating, setIsUpdating] = useState(false); // État pour le statut de mise à jour
 
   useEffect(() => {
@@ -38,7 +38,7 @@ function Profil() {
       const response = await fetch('https://directus-ucmn.onrender.com/users/me', {
         method: 'PATCH',
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
+          'Authorization': `Bearer ${localStorage.getItem('access_token')}`, // Assurez-vous que le token est présent ici
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
@@ -74,9 +74,10 @@ function Profil() {
       <div className="user-info">
         <p><strong>Nom :</strong> {userData.first_name} {userData.last_name}</p>
         <p><strong>Email :</strong> {userData.email}</p>
+        <p><strong>Username :</strong> {userData.username}</p> {/* Afficher le username ici */}
 
         <div>
-          <label><strong>Username :</strong></label>
+          <label><strong>Modifier le Username :</strong></label>
           <input 
             type="text" 
             value={newUsername || ''} // Assurez-vous que la valeur n'est jamais null

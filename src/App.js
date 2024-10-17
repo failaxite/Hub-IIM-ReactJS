@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
+import { FaSignInAlt, FaUserPlus, FaUser, FaComments, FaCalendarAlt, FaBox } from 'react-icons/fa'; // Importer les icônes
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profil from './pages/Profil';
@@ -13,12 +14,12 @@ function App() {
     <Router>
       <div className="app-container">
         <nav>
-          <Link to="/login">Connexion</Link>
-          <Link to="/register">Inscription</Link>
-          <Link to="/profil">Profil</Link>
-          <Link to="/forum">Forum</Link>
-          <Link to="/planning">Planning</Link>
-          <Link to="/casiers-connectes">Casiers Connectés</Link>
+          <Link to="/login"><FaSignInAlt /> Connexion</Link> {/* Icône de connexion */}
+          <Link to="/register"><FaUserPlus /> Inscription</Link> {/* Icône d'inscription */}
+          <Link to="/profil"><FaUser /> Profil</Link> {/* Icône de profil */}
+          <Link to="/forum"><FaComments /> Forum</Link> {/* Icône de forum */}
+          <Link to="/planning"><FaCalendarAlt /> Planning</Link> {/* Icône de planning */}
+          <Link to="/casiers-connectes"><FaBox /> Casiers Connectés</Link> {/* Icône de casier */}
         </nav>
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
